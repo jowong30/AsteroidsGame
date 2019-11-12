@@ -7,30 +7,35 @@ class Spaceship extends Floater
     	yCorners = new int[corners];
     	
 
-    	xCorners[0] =  6; 
-    	yCorners[0] =  1; 
+    	xCorners[0] =  5; 
+    	yCorners[0] =  0; 
 
-    	xCorners[1] =  6; 
-    	yCorners[1] =  3; 
+    	xCorners[1] =  -1; 
+    	yCorners[1] =  6; 
 
-    	xCorners[2] =  4; 
-    	yCorners[2] =  5; 
+    	xCorners[2] =  -3; 
+    	yCorners[2] =  6; 
 
-    	xCorners[3] =  2; 
-    	yCorners[3] =  5; 
+    	xCorners[3] =  -5; 
+    	yCorners[3] =  4; 
 
-    	xCorners[4] =  0; 
-    	yCorners[4] =  3; 
-    	xCorners[5] =  -2; 
-    	yCorners[5] =  5; 
-    	xCorners[6] =  -4; 
-    	yCorners[6] =  5;
-    	xCorners[7] =  -6; 
-    	yCorners[7] =  3;
-    	xCorners[8] =  -6; 
-    	yCorners[8] =  1;   
-		xCorners[9] =  0; 
-    	yCorners[9] =  -5; 
+    	xCorners[4] =  -5; 
+    	yCorners[4] =  2; 
+
+    	xCorners[5] =  -3; 
+    	yCorners[5] =  0; 
+
+    	xCorners[6] =  -5; 
+    	yCorners[6] =  -2;
+
+    	xCorners[7] =  -5; 
+    	yCorners[7] =  -4;
+
+    	xCorners[8] =  -3; 
+    	yCorners[8] =  -6; 
+
+		xCorners[9] =  -1; 
+    	yCorners[9] =  -6; 
 
     	myColor= 255;
     	myCenterX = 300;
