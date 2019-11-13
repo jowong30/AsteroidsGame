@@ -14,7 +14,7 @@ class Star
 
  // }
   public void show(){
-  	fill(red,green,blue,100);
+  	fill(255, 50);
   	noStroke();
   	ellipse(posX,posY,5,5);
   }

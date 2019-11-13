@@ -1,7 +1,7 @@
 //your variable declarations here
 //Spaceship bob = new Spaceship();
 Spaceship bob;
-Star [] patrick = new Star[100];
+Star [] patrick = new Star[500];
 public void setup() 
 {
 	background(0);
@@ -24,24 +24,20 @@ public void draw()
 
 public void keyPressed(){
 	if(key=='w'){
-		bob.accelerate(2);
+		bob.accelerate(1);
 	}
 	if(key=='a'){
-		bob.turn(-5);
+		bob.turn(-7);
 	}
 	if(key=='s'){
-		bob.accelerate(-2);
+		bob.accelerate(-1);
 	}
 	if(key=='d'){
-		bob.turn(5);
+		bob.turn(7);
 	}
 
-	if(key =='2'){
-		//bob.accelerate(0);
-		bob.myCenterX = Math.random()*600;
-    	bob.myCenterY = Math.random()*600;
-    	bob.myDirectionX = 0;		
-    	bob.myDirectionY = 0;
+	if(key ==' '){
+		bob.hyperSpace();
 	}
 
 }

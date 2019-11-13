@@ -69,6 +69,11 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     }
     endShape(CLOSE);
 
+    if(key=='w'){
+        line(-6, 4 ,-10,4);
+        line(-6, 0 ,-10,0);
+        line(-6, -4 ,-10,-4);
+    }
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
