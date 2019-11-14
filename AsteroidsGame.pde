@@ -27,13 +27,13 @@ public void keyPressed(){
 		bob.accelerate(1);
 	}
 	if(key=='a'){
-		bob.turn(-7);
+		bob.turn(-10);
 	}
 	if(key=='s'){
 		bob.accelerate(-1);
 	}
 	if(key=='d'){
-		bob.turn(7);
+		bob.turn(10);
 	}
 
 	if(key ==' '){

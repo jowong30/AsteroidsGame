@@ -49,8 +49,8 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   }   
   public void show ()  //Draws the floater at the current position  
   {             
-    fill(255,0,0);   
-    stroke(255,0,0);    
+    fill(myColor);   
+    stroke(myColor);    
     
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
@@ -70,9 +70,9 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     endShape(CLOSE);
 
     if(key=='w'){
-        line(-6, 4 ,-10,4);
-        line(-6, 0 ,-10,0);
-        line(-6, -4 ,-10,-4);
+        line(-7, 4 ,-10,4);
+        line(-7, 0 ,-10,0);
+        line(-7, -4 ,-10,-4);
     }
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
