@@ -53,4 +53,31 @@ class Spaceship extends Floater
     	bob.myDirectionY = 0;
     	bob.myPointDirection = Math.random()*360;
     }
+    public void directX(double x){
+    	myDirectionX = x;
+    }
+    public void directY(double y){
+    	myDirectionY = y;
+    }
+    /*
+    public void limit(){
+    	
+    	
+    	if(myDirectionX!>0){
+    		myDirectionX--;
+
+    	}
+    	if(myDirectionY>0){
+    		myDirectionY--;
+    	}
+
+    	if(myDirectionX<0){
+    		myDirectionX++;
+    	}
+    	if(myDirectionY<0){
+    		myDirectionY++;
+    	}
+    }
+    */
+
 }

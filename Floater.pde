@@ -3,7 +3,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   protected int corners;  //the number of corners, a triangular floater has 3   
   protected int[] xCorners;   
   protected int[] yCorners;   
-  protected int myColor;   
+  protected int myColor;    
   protected double myCenterX, myCenterY; //holds center coordinates   
   protected double myDirectionX, myDirectionY; //holds x and y coordinates of the vector for direction of travel   
   protected double myPointDirection; //holds current direction the ship is pointing in degrees    
@@ -11,7 +11,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          
-    //convert the current direction the floater is pointing to radians    
+    //convert the current direction the floater is point  ing to radians    
     double dRadians =myPointDirection*(Math.PI/180);     
     //change coordinates of direction of travel    
     myDirectionX += ((dAmount) * Math.cos(dRadians));    

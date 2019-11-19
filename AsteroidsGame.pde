@@ -2,6 +2,7 @@
 //Spaceship bob = new Spaceship();
 Spaceship bob;
 Star [] patrick = new Star[500];
+Asteroid [] steve = new Asteroid[5];
 public void setup() 
 {
 	background(0);
@@ -10,16 +11,30 @@ public void setup()
   	for(int i=0; i<patrick.length; i++){
   		patrick[i] = new Star();
   	}
+
+  	for(int i=0; i<steve.length; i++){
+  		steve[i] = new Asteroid();
+  	}
 }
 public void draw() 
 {
-	background(0,100);
+	background(0);
   bob.show();
   bob.move();
   for(int i = 0; i<patrick.length; i++){
   		//patrick.move();
   		patrick[i].show();
   }
+  for(int i = 0; i<steve.length; i++){
+  		//patrick.move();
+  		steve[i].show();
+  		steve[i].move();
+  }
+
+  fill(255);
+  text((int)bob.myDirectionX, 200,200);
+  text((int)bob.myDirectionY, 100,100);
+
 }
 
 public void keyPressed(){
@@ -39,5 +54,7 @@ public void keyPressed(){
 	if(key ==' '){
 		bob.hyperSpace();
 	}
-
+	
+	//bob.limit();
+	
 }
