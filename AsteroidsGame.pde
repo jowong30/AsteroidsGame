@@ -2,7 +2,13 @@
 //Spaceship bob = new Spaceship();
 Spaceship bob;
 Star [] patrick = new Star[500];
-Asteroid [] steve = new Asteroid[5];
+ArrayList <Asteroid> steve = new ArrayList <Asteroid>();
+int asteroidSize=30;
+boolean up = false;
+boolean down = false;
+boolean left = false;
+boolean right = false;
+
 public void setup() 
 {
 	background(0);
@@ -12,8 +18,8 @@ public void setup()
   		patrick[i] = new Star();
   	}
 
-  	for(int i=0; i<steve.length; i++){
-  		steve[i] = new Asteroid();
+  	for(int i=0; i<asteroidSize; i++){
+  		steve.add(new Asteroid());
   	}
 }
 public void draw() 
@@ -25,30 +31,65 @@ public void draw()
   		//patrick.move();
   		patrick[i].show();
   }
-  for(int i = 0; i<steve.length; i++){
+  for(int i = 0; i<asteroidSize; i++){
   		//patrick.move();
-  		steve[i].show();
-  		steve[i].move();
+  		steve.get(i).show();
+  		steve.get(i).move();
+
+      if(dist( (float)bob.shipPosX(), (float)bob.shipPosY(), (float)steve.get(i).getAsPosX(), (float)steve.get(i).getAsPosY())<13 ){
+          steve.remove(i);
+          asteroidSize--;
+      }
+  }
+  fill(255,0,0);
+  text(asteroidSize , 50,50);
+
+  if(up ==true ){
+      bob.directX(0);
+      bob.directY(0);
+      bob.accelerate(1);
+  }
+  if(down ==true ){
+      bob.directX(0);
+      bob.directY(0);
+      bob.accelerate(-1);
+  }
+  if(left ==true ){
+      bob.turn(-10);
+  }
+  if(right ==true ){
+      bob.turn(10);
   }
 
-  fill(255);
-  text((int)bob.myDirectionX, 200,200);
-  text((int)bob.myDirectionY, 100,100);
+}
 
+public void keyReleased(){
+  if(key=='w'){
+    up = false;
+  }
+  if(key=='a'){
+    left = false;
+  }
+  if(key=='s'){
+    down = false;
+  }
+  if(key=='d'){  
+    right = false;
+  }
 }
 
 public void keyPressed(){
 	if(key=='w'){
-		bob.accelerate(1);
+		up = true;
 	}
 	if(key=='a'){
-		bob.turn(-10);
+		left = true;
 	}
 	if(key=='s'){
-		bob.accelerate(-1);
+		down = true;
 	}
-	if(key=='d'){
-		bob.turn(10);
+	if(key=='d'){  
+		right = true;
 	}
 
 	if(key ==' '){
@@ -58,3 +99,19 @@ public void keyPressed(){
 	//bob.limit();
 	
 }
+
+/*
+if(key=='w'){
+    bob.accelerate(1);
+  }
+  if(key=='a'){
+    bob.turn(-10);
+  }
+  if(key=='s'){
+    bob.accelerate(-1);
+  }
+  if(key=='d'){  
+    bob.turn(10);
+  }
+
+  */

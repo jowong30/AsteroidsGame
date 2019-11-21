@@ -21,6 +21,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   {     
     //rotates the floater by a given number of degrees    
     myPointDirection+=nDegreesOfRotation;   
+    
   }   
   public void move ()   //move the floater in the current direction of travel
   {      
@@ -74,6 +75,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
         line(-7, 0 ,-10,0);
         line(-7, -4 ,-10,-4);
     }
+    
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);

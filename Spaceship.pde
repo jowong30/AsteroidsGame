@@ -59,6 +59,13 @@ class Spaceship extends Floater
     public void directY(double y){
     	myDirectionY = y;
     }
+    public double shipPosX(){
+        return myCenterX;
+    }
+    public double shipPosY(){
+        return myCenterY;
+    }
+
     /*
     public void limit(){
     	

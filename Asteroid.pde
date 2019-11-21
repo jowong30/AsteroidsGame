@@ -34,12 +34,19 @@ public class Asteroid extends Floater
 		
 		myPointDirection= (Math.random()*2*PI);
 
-		rotAsteroid = (int)(Math.random()*101-50);
+		rotAsteroid = (int)(Math.random()*11-5);
 
 	}
 
 	public void move(){
 		turn(rotAsteroid);
 		super.move();
+	}
+
+	public double getAsPosX(){
+		return myCenterX;
+	}
+	public double getAsPosY(){
+		return myCenterY;
 	}
 }

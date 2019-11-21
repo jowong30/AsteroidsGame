@@ -1,7 +1,7 @@
 class Star
 { //note that this class does NOT extend Floater
 
-  private float posX,posY,red,green,blue;
+  private float posX,posY,red,green,blue,sizeX,sizeY;
 
   public Star(){
   		posX= (float)(Math.random()*600);
@@ -9,14 +9,16 @@ class Star
   		red = (float)(Math.random()*255);
   		green = (float)(Math.random()*255);
   		blue = (float)(Math.random()*255);
+      sizeX=(float)(Math.random()*5);
+      sizeY=(float)(Math.random()*5);
   }
  // public move(){
 
  // }
   public void show(){
-  	fill(255, 50);
+  	fill(red,green,blue);
   	noStroke();
-  	ellipse(posX,posY,5,5);
+  	ellipse(posX,posY,sizeX,sizeY);
   }
 
 
