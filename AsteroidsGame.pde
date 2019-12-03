@@ -8,7 +8,8 @@ boolean up = false;
 boolean down = false;
 boolean left = false;
 boolean right = false;
-
+int bulletSize=0;
+ArrayList <Bullet> bill = new ArrayList <Bullet>();
 public void setup() 
 {
 	background(0);
@@ -25,6 +26,22 @@ public void setup()
 public void draw() 
 {
 	background(0);
+
+  for(int i = 0; i<bill.size(); i++){
+      //patrick.move();
+      bill.get(i).show();
+      bill.get(i).move();
+
+      /*
+      if(dist( (float)bob.shipPosX(), (float)bob.shipPosY(), (float)steve.get(i).getAsPosX(), (float)steve.get(i).getAsPosY())<13 ){
+          steve.remove(i);
+          asteroidSize--;
+      }
+      */
+  }
+
+
+
   bob.show();
   bob.move();
   for(int i = 0; i<patrick.length; i++){
@@ -47,19 +64,20 @@ public void draw()
   if(up ==true ){
       bob.directX(0);
       bob.directY(0);
-      bob.accelerate(1);
+      bob.accelerate(1.5);
   }
   if(down ==true ){
       bob.directX(0);
       bob.directY(0);
-      bob.accelerate(-1);
+      bob.accelerate(-1.5);
   }
   if(left ==true ){
-      bob.turn(-10);
+      bob.turn(-7);
   }
   if(right ==true ){
-      bob.turn(10);
+      bob.turn(7);
   }
+
 
 }
 
@@ -95,9 +113,16 @@ public void keyPressed(){
 	if(key ==' '){
 		bob.hyperSpace();
 	}
+
 	
 	//bob.limit();
 	
+}
+
+public void mouseClicked(){
+  bill.add(new Bullet(bob));
+
+
 }
 
 /*
