@@ -15,8 +15,15 @@ class Bullet extends Floater
 		//circle(myCenterX,myCenterY,5);
 		fill(255);
 
-		circle((float)myCenterX,(float)myCenterY,50);
+		circle((float)myCenterX,(float)myCenterY,10);
 	}
+
+	public double bulletPosX(){//accessor
+        return myCenterX;
+    }
+    public double bulletPosY(){
+        return myCenterY;
+    }
 
 
 }

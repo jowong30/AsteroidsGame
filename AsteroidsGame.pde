@@ -9,19 +9,21 @@ boolean down = false;
 boolean left = false;
 boolean right = false;
 int bulletSize=0;
+int bulletNum =0;
 ArrayList <Bullet> bill = new ArrayList <Bullet>();
 public void setup() 
 {
 	background(0);
-  	size(600,600);
-  	bob= new Spaceship();
-  	for(int i=0; i<patrick.length; i++){
-  		patrick[i] = new Star();
-  	}
+	size(600,705);
+	bob= new Spaceship();
+	for(int i=0; i<patrick.length; i++){
+		patrick[i] = new Star();
+	}
 
-  	for(int i=0; i<asteroidSize; i++){
-  		steve.add(new Asteroid());
-  	}
+	for(int i=0; i<asteroidSize; i++){
+		steve.add(new Asteroid());
+	}
+
 }
 public void draw() 
 {
@@ -58,6 +60,25 @@ public void draw()
           asteroidSize--;
       }
   }
+
+  for(int i = 0; i<bill.size(); i++){
+    for(int u = 0; u<asteroidSize; u++){
+          if(dist( (float)bill.get(i).bulletPosX(), (float)bill.get(i).bulletPosY(), (float)steve.get(u).getAsPosX(), (float)steve.get(u).getAsPosY())<10 ){
+              bill.remove(i);
+              steve.remove(u);
+              asteroidSize--;
+              break;
+          }
+      }
+  }
+  for(int i = 0; i<bill.size(); i++){
+    if((float)bill.get(i).bulletPosY()==0 || (float)bill.get(i).bulletPosY()==600||(float)bill.get(i).bulletPosX()==0 || (float)bill.get(i).bulletPosX()==600){
+        bill.remove(i);
+    }
+    
+  }
+
+
   fill(255,0,0);
   text(asteroidSize , 50,50);
 
@@ -78,6 +99,19 @@ public void draw()
       bob.turn(7);
   }
 
+  if(mousePressed==true&& frameCount%20==0){
+      bill.add(new Bullet(bob));
+  }
+
+  fill(255);
+  rect(0,600,600,100);
+  fill(0);
+  rect(5,605,590,90);
+
+  fill(255);
+  //textAllign(CENTER);
+  textSize(50);
+  text("FIGHT",20,660);
 
 }
 
@@ -119,12 +153,13 @@ public void keyPressed(){
 	
 }
 
-public void mouseClicked(){
+/*
+public void mousePressed(){
   bill.add(new Bullet(bob));
 
 
 }
-
+*/
 /*
 if(key=='w'){
     bob.accelerate(1);
