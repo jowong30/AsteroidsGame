@@ -99,7 +99,7 @@ public void draw()
       bob.turn(7);
   }
 
-  if(mousePressed==true&& frameCount%20==0){
+  if(mousePressed==true&& frameCount%10==0 &&mouseX>15&&mouseX<105 && mouseY<682 && mouseY>625){
       bill.add(new Bullet(bob));
   }
 
@@ -108,11 +108,30 @@ public void draw()
   fill(0);
   rect(5,605,590,90);
 
-  fill(255);
-  //textAllign(CENTER);
-  textSize(50);
-  text("FIGHT",20,660);
+  //fight
+  
+  noFill();
+  strokeWeight(2);
+  stroke(255,102,0);
+  rect(15,625, 95,50);//59,650
+  fill(255, 102, 0);
+  textSize(25);
+  text("FIGHT",27,660);
 
+
+  if(mouseX>15&&mouseX<105 && mouseY<682 && mouseY>625){
+      noFill();
+      strokeWeight(2);
+      stroke(255, 204, 0);
+      rect(15,625, 95,50);//59,650
+      fill(255, 204, 0);
+      textSize(25);
+      text("FIGHT",27,660);
+  }
+
+
+
+  fill(255,0,0);
 }
 
 public void keyReleased(){
@@ -148,7 +167,11 @@ public void keyPressed(){
 		bob.hyperSpace();
 	}
 
-	
+	if(key =='p'){
+    noLoop();
+  }
+  if(key =='o'){
+    loop();  }
 	//bob.limit();
 	
 }
