@@ -30,10 +30,9 @@ public void draw()
 	background(0);
 
   for(int i = 0; i<bill.size(); i++){
-      //patrick.move();
-      bill.get(i).show();
-      bill.get(i).move();
 
+      bill.get(i).move();
+      bill.get(i).show();
       /*
       if(dist( (float)bob.shipPosX(), (float)bob.shipPosY(), (float)steve.get(i).getAsPosX(), (float)steve.get(i).getAsPosY())<13 ){
           steve.remove(i);
@@ -102,6 +101,7 @@ public void draw()
   if(mousePressed==true&& frameCount%10==0 &&mouseX>15&&mouseX<105 && mouseY<682 && mouseY>625){
       bill.add(new Bullet(bob));
   }
+
 
   fill(255);
   rect(0,600,600,100);
