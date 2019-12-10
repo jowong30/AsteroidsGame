@@ -11,6 +11,9 @@ boolean right = false;
 int bulletSize=0;
 int bulletNum =0;
 ArrayList <Bullet> bill = new ArrayList <Bullet>();
+int xx=0;
+int yy=0;
+int life=12;
 public void setup() 
 {
 	background(0);
@@ -57,6 +60,7 @@ public void draw()
       if(dist( (float)bob.shipPosX(), (float)bob.shipPosY(), (float)steve.get(i).getAsPosX(), (float)steve.get(i).getAsPosY())<13 ){
           steve.remove(i);
           asteroidSize--;
+          life-=3;
       }
   }
 
@@ -113,21 +117,43 @@ public void draw()
   noFill();
   strokeWeight(2);
   stroke(255,102,0);
-  rect(15,625, 95,50);//59,650
+  rect(15,625, 100,50);//59,650
   fill(255, 102, 0);
   textSize(25);
-  text("FIGHT",27,660);
+  text("FIGHT",30,660);
 
 
-  if(mouseX>15&&mouseX<105 && mouseY<682 && mouseY>625){
+  if(mouseX>15&&mouseX<115 && mouseY<682 && mouseY>625){
       noFill();
       strokeWeight(2);
       stroke(255, 204, 0);
-      rect(15,625, 95,50);//59,650
+      rect(15,625, 100,50);//59,650
       fill(255, 204, 0);
       textSize(25);
-      text("FIGHT",27,660);
+      text("FIGHT",30,660);
+      fill(255,0,0);
+      noStroke();
+      xx=25;
+      yy=650;
+      beginShape();
+        vertex(0 +xx,5 +yy);
+        vertex(7 +xx,-1 +yy);
+        vertex(7 +xx,-3 +yy);
+        vertex(4 +xx,-5 +yy);
+        vertex(2 +xx,-5 +yy);
+        vertex(0 +xx,-3 +yy);
+        vertex(-2+xx ,-5 +yy);
+        vertex(-4+xx ,-5 +yy);   
+        vertex(-7+xx ,-3 +yy);    
+        vertex(-7+xx ,-1 +yy);  
+      endShape(CLOSE);          
   }
+
+  fill(255);
+  noStroke();
+  fill(255,0,0);
+  text("HP" ,135,660);
+  rect(170,650,120,25);
 
 
 
