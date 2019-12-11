@@ -14,6 +14,8 @@ ArrayList <Bullet> bill = new ArrayList <Bullet>();
 int xx=0;
 int yy=0;
 int life=12;
+int restartSwitch =0;
+int reAsteroid=0;
 public void setup() 
 {
 	background(0);
@@ -82,8 +84,7 @@ public void draw()
   }
 
 
-  fill(255,0,0);
-  text(asteroidSize , 50,50);
+  
 
   if(up ==true ){
       bob.directX(0);
@@ -102,11 +103,11 @@ public void draw()
       bob.turn(7);
   }
 
-  if(mousePressed==true&& frameCount%10==0 &&mouseX>15&&mouseX<105 && mouseY<682 && mouseY>625){
+  if(mousePressed==true&& frameCount%10==0 &&mouseX>15&&mouseX<115 && mouseY<682 && mouseY>625){
       bill.add(new Bullet(bob));
   }
 
-
+  //BOTTOM BAR
   fill(255);
   rect(0,600,600,100);
   fill(0);
@@ -149,18 +150,60 @@ public void draw()
       endShape(CLOSE);          
   }
 
+  //HP BAR
   fill(255);
   noStroke();
-  fill(255,0,0);
+  fill(255);
   text("HP" ,135,660);
-  rect(170,650,120,25);
+  fill(255,0,0);
+  rect(173,640,120,23);
+  fill(255, 204, 0);
+  rect(173,640,life*10,23);
+  fill(255);
+  text(life+ " / 12" ,300,660);
+
+  fill(255);
+  textSize(15);
+  text("  Number of \nAsteroids left" ,420,630);
+  textSize(25);
+  text(asteroidSize , 450,680);
+
+
+  if(life<=0){
+    
+    textSize(50);
+    textAlign(CENTER);
+    text("Game Over", 300,300);
+    restartSwitch=1;
+    textAlign(LEFT);
+    noLoop();
+  }
+
+  if(restartSwitch ==1){
+      if(key=='r'){
+          loop();
+          life=12;
+      }
+  }
 
 
 
   fill(255,0,0);
+  stroke(255,203,0);
 }
 
 public void keyReleased(){
+  if(restartSwitch ==1){
+    if(key=='r'){
+        loop();
+        life=12;
+        asteroidSize=30;
+        for(int i=0; i<asteroidSize; i++){
+          steve.add(new Asteroid());
+        }
+    }
+  }
+
   if(key=='w'){
     up = false;
   }
